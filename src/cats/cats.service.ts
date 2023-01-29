@@ -26,4 +26,8 @@ export class CatsService {
   async remove(idx: number) {
     return this.catsRepository.delete(idx);
   }
+
+  async softDelete(idx: number) {
+    return this.catsRepository.softDelete(idx);
+  }
 }
