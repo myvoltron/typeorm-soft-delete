@@ -15,6 +15,10 @@ export class CatsService {
     return this.catsRepository.find();
   }
 
+  async findAllWithDeleted() {
+    return this.catsRepository.find({ withDeleted: true });
+  }
+
   async findOne(idx: number) {
     return this.catsRepository.findOne({ where: { idx } });
   }

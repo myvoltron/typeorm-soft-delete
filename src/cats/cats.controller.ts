@@ -24,6 +24,11 @@ export class CatsController {
     return this.catsService.findAll();
   }
 
+  @Get('withDeleted')
+  findAllWithDeleted() {
+    return this.catsService.findAllWithDeleted();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.catsService.findOne(+id);
