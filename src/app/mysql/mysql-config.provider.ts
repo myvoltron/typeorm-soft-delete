@@ -16,6 +16,7 @@ export class MysqlConfigProvider implements TypeOrmOptionsFactory {
       database: this.configService.get('DB_DATABASE'),
       autoLoadEntities: true,
       synchronize: true,
+      logging: true,
     };
   }
 }
