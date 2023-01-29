@@ -30,4 +30,8 @@ export class CatsService {
   async softDelete(idx: number) {
     return this.catsRepository.softDelete(idx);
   }
+
+  async restore(idx: number) {
+    return this.catsRepository.restore({ idx });
+  }
 }
