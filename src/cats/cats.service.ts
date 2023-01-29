@@ -7,23 +7,23 @@ import { UpdateCatDto } from './dto/update-cat.dto';
 export class CatsService {
   constructor(private catsRepository: CatsRepository) {}
 
-  create(createCatDto: CreateCatDto) {
+  async create(createCatDto: CreateCatDto) {
     return this.catsRepository.save(createCatDto);
   }
 
-  findAll() {
+  async findAll() {
     return this.catsRepository.find();
   }
 
-  findOne(idx: number) {
+  async findOne(idx: number) {
     return this.catsRepository.findOne({ where: { idx } });
   }
 
-  update(idx: number, updateCatDto: UpdateCatDto) {
+  async update(idx: number, updateCatDto: UpdateCatDto) {
     return this.catsRepository.update({ idx }, updateCatDto);
   }
 
-  remove(idx: number) {
+  async remove(idx: number) {
     return this.catsRepository.delete(idx);
   }
 }
